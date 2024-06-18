@@ -1,14 +1,28 @@
 import { useCallback, useContext } from "react"
 import { Link } from "react-router-dom"
 import { GlobalContext } from "../../../context"
+import axios from "axios"
 
 
 
 const DoctorList = () => {
   const {
-    doctors
+    doctors,
+    setDoctors
   } = useContext(GlobalContext)
-  console.log(doctors)
+ const handleDelete = async(id) =>{
+     try{
+      const res = await axios.delete(`/doctors/${id}`);
+      if(res.data.success){
+        setDoctors(doctors.filter((doctor) => doctor._id !== id));
+        // alert("Doctor deleted successfully");
+      }
+     }catch(error){
+      console.log(error)
+     }
+ }
+
+
 
   return (
     <>
@@ -64,6 +78,7 @@ const DoctorList = () => {
                         </button>
                         <button
                           type="button"
+                          onClick={()=> handleDelete(data._id)}
                           className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                         >
                           Delete

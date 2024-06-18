@@ -25,16 +25,17 @@ const AppointmentList = () =>{
       <table className="w-full text-md bg-white shadow-md rounded mb-4">
         <tbody>
           <tr className="border-b">
-            <th className="text-left p-3 px-5">patientId</th>
+            
             <th className="text-left p-3 px-5">name</th>
             <th className="text-left p-3 px-5">age</th>
             <th className="text-left p-3 px-5">address</th>
             <th className="text-left p-3 px-5">email</th>
             <th className="text-left p-3 px-5">phone</th>
             <th className="text-left p-3 px-5">doctor</th>
-            <th className="text-left p-3 px-5">specialist</th>
+            
             <th className="text-left p-3 px-5">app_Time</th>
             <th className="text-left p-3 px-5">status</th>
+            <th className="text-left float-end mr-12 mt-3">action</th>
             <th />
           </tr>
           <tr className="border-b hover:bg-orange-100 bg-gray-100">
@@ -44,16 +45,24 @@ const AppointmentList = () =>{
               </p>
             </td>
             <td className="p-3 px-5">
-              
+            name
             </td>
             <td className="p-3 px-5">
-              
+            name
             </td>
             <td className="p-3 px-5">
-              
+            name
             </td>
             <td className="p-3 px-5">
-              
+            name
+            </td>
+            <td className="p-3 px-5">
+            name
+            </td><td className="p-3 px-5">
+            name
+            </td>
+            <td className="p-3 px-5">
+            name
             </td>
             <td className="p-3 px-5 flex justify-end">
               <button
