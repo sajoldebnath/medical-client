@@ -3,7 +3,7 @@ import { GlobalContext } from '../context';
 import { Link } from 'react-router-dom';
 const Header = () => {
     const {user ,setUser} = useContext(GlobalContext)
-    console.log(user)
+    
     return (
         <div>
             <header className="bg-white lg:py-8">

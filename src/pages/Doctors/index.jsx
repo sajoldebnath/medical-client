@@ -5,305 +5,116 @@ import doc4_png from '../../assets/doc4.png'
 import doc1_jpg from '../../assets/doc1.jpg'
 import doc5_jpg from '../../assets/doc5.jpg'
 import doc6_jpg from '../../assets/doc6.jpg'
+import { useContext } from "react"
+import { GlobalContext } from "../../context"
+import { Navigate, useNavigate } from "react-router-dom"
 export default function Doctors() {
+    const { doctors } = useContext(GlobalContext)
+    const navigate = useNavigate();
+
     return (
         <>
-        
+
             <div
                 className="max-w-7xl mx-auto my-8 px-2">
 
                 <div className="flex justify-center text-2xl md:text-3xl font-bold mb-4">
                     Our Doctors
                 </div>
-
                 <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 p-2 xl:p-5">
-                    <li className="relative bg-white flex flex-col justify-between border rounded shadow-md hover:shadow-primary-400">
+                    {
+                        doctors.map((doctor, index) => (
+                            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 max-w-sm">
+                                <div className="relative">
 
-                        <a className="relative" href="/tool/writey-ai">
-                            <div className="relative w-full aspect-video">
-                                <img className='h-full mt-10' src={doc2_png} alt="" />
-                                <div
-                                    className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-gray-800 to-gray-500 text-white">
-                                    <h2 className="text-xl font-semibold">Jacqueline fernandis</h2>
-                                    
+                                    <img
+                                        className="w-full"
+                                        src={doctor.image}
+                                        alt="Image"
+                                    />
+
+                                </div>
+                                <div className="p-4">
+                                    <div className=" flex justify-between">
+                                        <h3 className="text-lg font-medium mb-2">{doctor.name}</h3>
+                                        <div className="flex justify-center">
+
+                                            <svg
+
+                                                className="w-4 h-4 mx-px fill-current text-orange-600"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 14 14"
+                                            >
+                                                <path d="M6.43 12l-2.36 1.64a1 1 0 0 1-1.53-1.11l.83-2.75a1 1 0 0 0-.35-1.09L.73 6.96a1 1 0 0 1.59-1.8l2.87-.06a1 1 0 0 0.92-.67l.95-2.71a1 1 0 0 1 1.88 0l.95 2.71c.13.4.5.66.92.67l2.87.06a1 1 0 0 1.59 1.8l-2.3 1.73a1 1 0 0 0-.34 1.09l.83 2.75a1 1 0 0 1-1.53 1.1L7.57 12a1 1 0 0 0-1.14 0z"></path>
+                                            </svg>
+                                            <svg
+
+                                                className="w-4 h-4 mx-px fill-current text-orange-600"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 14 14"
+                                            >
+                                                <path d="M6.43 12l-2.36 1.64a1 1 0 0 1-1.53-1.11l.83-2.75a1 1 0 0 0-.35-1.09L.73 6.96a1 1 0 0 1.59-1.8l2.87-.06a1 1 0 0 0.92-.67l.95-2.71a1 1 0 0 1 1.88 0l.95 2.71c.13.4.5.66.92.67l2.87.06a1 1 0 0 1.59 1.8l-2.3 1.73a1 1 0 0 0-.34 1.09l.83 2.75a1 1 0 0 1-1.53 1.1L7.57 12a1 1 0 0 0-1.14 0z"></path>
+                                            </svg>
+                                            <svg
+
+                                                className="w-4 h-4 mx-px fill-current text-orange-600"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 14 14"
+                                            >
+                                                <path d="M6.43 12l-2.36 1.64a1 1 0 0 1-1.53-1.11l.83-2.75a1 1 0 0 0-.35-1.09L.73 6.96a1 1 0 0 1.59-1.8l2.87-.06a1 1 0 0 0.92-.67l.95-2.71a1 1 0 0 1 1.88 0l.95 2.71c.13.4.5.66.92.67l2.87.06a1 1 0 0 1.59 1.8l-2.3 1.73a1 1 0 0 0-.34 1.09l.83 2.75a1 1 0 0 1-1.53 1.1L7.57 12a1 1 0 0 0-1.14 0z"></path>
+                                            </svg>
+                                            <svg
+
+                                                className="w-4 h-4 mx-px fill-current text-orange-600"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 14 14"
+                                            >
+                                                <path d="M6.43 12l-2.36 1.64a1 1 0 0 1-1.53-1.11l.83-2.75a1 1 0 0 0-.35-1.09L.73 6.96a1 1 0 0 1.59-1.8l2.87-.06a1 1 0 0 0.92-.67l.95-2.71a1 1 0 0 1 1.88 0l.95 2.71c.13.4.5.66.92.67l2.87.06a1 1 0 0 1.59 1.8l-2.3 1.73a1 1 0 0 0-.34 1.09l.83 2.75a1 1 0 0 1-1.53 1.1L7.57 12a1 1 0 0 0-1.14 0z"></path>
+                                            </svg>
+                                            <svg
+
+                                                className="w-4 h-4 mx-px fill-current text-orange-600"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 14 14"
+                                            >
+                                                <path d="M6.43 12l-2.36 1.64a1 1 0 0 1-1.53-1.11l.83-2.75a1 1 0 0 0-.35-1.09L.73 6.96a1 1 0 0 1.59-1.8l2.87-.06a1 1 0 0 0.92-.67l.95-2.71a1 1 0 0 1 1.88 0l.95 2.71c.13.4.5.66.92.67l2.87.06a1 1 0 0 1.59 1.8l-2.3 1.73a1 1 0 0 0-.34 1.09l.83 2.75a1 1 0 0 1-1.53 1.1L7.57 12a1 1 0 0 0-1.14 0z"></path>
+                                            </svg>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <p className="text-gray-600 text-sm mb-4">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante
+                                        vel eros fermentum faucibus sit amet euismod lorem.
+                                    </p>
+                                    <div className="flex items-center justify-between">
+                                        <span>{doctor.specilist}</span>
+
+                                        {doctor.specialist.map((data, index) => (
+                                            
+
+                                            <span key={index}>{data.category}</span>
+                                        ))
+                                        }
+
+                                        <a
+                                         href={`/appointment/${doctor._id}`}
+                                        
+                                         className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                            Appointment
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-
-                        <div className="flex flex-col justify-beetween gap-3 px-4 py-2">
-
-                            <p className="text-gray-600 two-lines">
-                                Writey A.I is an AI tool that generates original, researched blog posts in minutes, provides content
-                                optimization advice, and works with a plagiarism-free rule.
-                            </p>
-
-                            <ul className="flex flex-wrap items-center justify-start text-sm gap-2">
-                                <li title="Pricing type"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                
-                                    <span>Specilist</span>
-                                </li>
-                            </ul>
-
-                            <ul className="flex flex-wrap text-sm gap-2 my-1">
-                                <li className="flex items-center gap-2">
-                                    <span>Anesthesiology,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Cardiology,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Dermatology,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Family Medicine</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </li>
-
-                    <li className="relative bg-white flex flex-col justify-between border rounded shadow-md hover:shadow-primary-400">
-                        <a className="relative" href="/tool/writemeai">
-                            <div className="relative w-full aspect-video">
-                                
-                                    <img className='h-full mt-10' src={doc3_jpg} alt="" />
-                                <div
-                                    className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-gray-800 to-gray-500 text-white">
-                                    <h2 className="text-xl font-semibold">Jeneliya</h2>
-                                    
-                                </div>
-                            </div>
-                        </a>
 
 
-                        <div className="flex flex-col justify-beetween gap-3 px-4 py-2">
 
-                            <p className="text-gray-600 two-lines">
-                                WriteMe.ai is your #1 AI-powered content writing assistant that crafts high-quality content at a
-                                fraction of
-                                the cost. This advanced solution eliminates the need for manual writing and allows users to
-                                effortlessly
-                                generate content in a few clicks.
-                            </p>
-
-                            <ul className="flex flex-wrap items-center justify-start text-sm gap-2">
-                                <li title="Pricing type"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                   
-                                    <span>Specilist</span>
-                                </li>
-
-                            </ul>
-
-                            <ul className="flex flex-wrap text-sm gap-2 my-1">
-                                <li className="flex items-center gap-2">
-                                    <span>General Surgery,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Cardiology,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Dermatology,</span>
-                                </li>
-                                
-                            </ul>
-                        </div>
-
-                    </li>
-
-                    <li className="relative bg-white flex flex-col justify-between border rounded shadow-md hover:shadow-primary-400">
-                        <a className="relative" href="/tool/publer">
-                            <div className="relative w-full aspect-video">
-                                <img className='h-full mt-10' src={doc4_png} alt="" />
-                                    <div
-                                    className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-gray-800 to-gray-500 text-white">
-                                    <h2 className="text-xl font-semibold">Publer</h2>
-                                    
-                                </div>
-                            </div>
-                        </a>
-
-
-                        <div className="flex flex-col justify-beetween gap-3 px-4 py-2">
-
-                            <p className="text-gray-600 two-lines">
-                                Publer is a robust social media management platform offering a range of features including post
-                                scheduling,
-                                collaboration tools, analytics, and AI assistance to supercharge your social media strategy across
-                                multiple
-                                platforms.
-                            </p>
-
-                            <ul className="flex flex-wrap items-center justify-start text-sm gap-2">
-                                <li title="Pricing type"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                    
-                                    <span>Specilist</span>
-                                </li>
-
-                                <li title="Support for API"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                    
-                                </li>
-                            </ul>
-
-                            <ul className="flex flex-wrap text-sm gap-2 my-1">
-                                <li className="flex items-center gap-2">
-                                    <span>General Surgery,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Cardiology,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Dermatology</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </li>
-
-                    <li className="relative bg-white flex flex-col justify-between border rounded shadow-md hover:shadow-primary-400">
-                        <a className="relative" href="/tool/anyword">
-                            <div className="relative w-full aspect-video">
-                            <img className='h-full mt-10' src={doc5_jpg} alt="" />
-                                  <div
-                                    className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-gray-800 to-gray-500 text-white">
-                                    <h2 className="text-xl font-semibold">Anyword</h2>
-                                   
-                                </div>
-                            </div>
-                        </a>
-
-
-                        <div className="flex flex-col justify-beetween gap-3 px-4 py-2">
-                            <p className="text-gray-600 two-lines">
-                                Anyword is an AI-powered platform trusted by marketing teams across the globe to generate, score,
-                                and rank
-                                content based on predicted performance. With features like Custom Scoring AI models, Brand Messaging
-                                Management, and a Performance Boost Chrome Extension, Anyword provides highly personalized and
-                                effective
-                                content for every channel.
-                            </p>
-
-                            <ul className="flex flex-wrap items-center justify-start text-sm gap-2">
-                                <li title="Pricing type"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                    
-                                    <span>Specilist</span>
-                                </li>
-
-                                <li title="Support for API"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                    
-                                </li>
-                            </ul>
-
-                            <ul className="flex flex-wrap text-sm gap-2 my-1">
-                                <li className="flex items-center gap-2">
-                                    <span>General Surgery,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Hospital Medicine</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </li>
-
-                    <li className="relative bg-white flex flex-col justify-between border rounded shadow-md hover:shadow-primary-400">
-
-                        <a className="relative" href="/tool/blogseo-ai">
-                            <div className="relative w-full aspect-video">
-                            <img className='h-full mt-10' src={doc1_jpg} alt="" />
-                                 <div
-                                    className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-gray-800 to-gray-500 text-white">
-                                    <h2 className="text-xl font-semibold">Adword</h2>
-                                    
-                                </div>
-                            </div>
-                        </a>
-
-
-                        <div className="flex flex-col justify-beetween gap-3 px-4 py-2">
-                            <p className="text-gray-600 two-lines">
-                                BlogSEO AI revolutionizes SEO writing. Stay at the top of your SEO game with this automated writing
-                                tool that
-                                generates high-performing blog content. It also offers keyword research, internal linking strategy,
-                                schema
-                                generation, and more.
-                            </p>
-
-                            <ul className="flex flex-wrap items-center justify-start text-sm gap-2">
-                                <li title="Pricing type"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                    
-                                    <span>Specilist</span>
-                                </li>
-
-                                <li title="Support for API"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                    
-                                </li>
-                            </ul>
-
-                            <ul className="flex flex-wrap text-sm gap-2 my-1">
-                                <li className="flex items-center gap-2">
-                                    <span>Dermatology,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Hospital Medicine</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li className="relative bg-white flex flex-col justify-between border rounded shadow-md hover:shadow-primary-400">
-
-                        <a className="relative" href="/tool/typewise">
-                            <div className="relative w-full aspect-video">
-                            <img className='h-full mt-10' src={doc6_jpg} alt="" />
-                             <div
-                                    className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-gray-800 to-gray-500 text-white">
-                                    <h2 className="text-xl font-semibold">Adison</h2>
-                                    
-                                </div>
-                            </div>
-                        </a>
-
-
-                        <div className="flex flex-col justify-beetween gap-3 px-4 py-2">
-                            <p className="text-gray-600 two-lines">
-                                Typewise is an AI Communication Assistant that helps customer service and sales teams communicate
-                                faster and
-                                more effectively.
-                            </p>
-
-                            <ul className="flex flex-wrap items-center justify-start text-sm gap-2">
-                                <li title="Pricing type"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                    
-                                    <span>Specilist</span>
-                                </li>
-
-                                <li title="Support for API"
-                                    className="flex items-center cursor-pointer gap-0.5 bg-gray-100 text-black px-2 py-0.5 rounded-full">
-                                    
-                                </li>
-                            </ul>
-
-                            <ul className="flex flex-wrap text-sm gap-2 my-1">
-                                <li className="flex items-center gap-2">
-                                    <span>Cardiology,</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span>Hospital Medicine</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </li>
+                        ))
+                    }
                 </ul>
+
 
             </div>
         </>
