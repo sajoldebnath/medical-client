@@ -1,33 +1,61 @@
 import React from "react"
 const Dashboard = () => {
-  return (<>
-    <div className="w-10/12">
-      <div className="flex flex-row">
-        <div
-          className="bg-no-repeat bg-red-200 border border-red-300 rounded-xl w-7/12 mr-2 p-6"
-          style={{
-            backgroundImage:
-              "url(https://previews.dropbox.com/p/thumb/AAvyFru8elv-S19NMGkQcztLLpDd6Y6VVVMqKhwISfNEpqV59iR5sJaPD4VTrz8ExV7WU9ryYPIUW8Gk2JmEm03OLBE2zAeQ3i7sjFx80O-7skVlsmlm0qRT0n7z9t07jU_E9KafA9l4rz68MsaZPazbDKBdcvEEEQPPc3TmZDsIhes1U-Z0YsH0uc2RSqEb0b83A1GNRo86e-8TbEoNqyX0gxBG-14Tawn0sZWLo5Iv96X-x10kVauME-Mc9HGS5G4h_26P2oHhiZ3SEgj6jW0KlEnsh2H_yTego0grbhdcN1Yjd_rLpyHUt5XhXHJwoqyJ_ylwvZD9-dRLgi_fM_7j/p.png?fv_content=true&size_mode=5)",
-            backgroundPosition: "100% center"
-          }}
-        >
-          <p className="text-5xl text-indigo-900">
-            Welcome <br />
-            <strong>Lorem Ipsum</strong>
-          </p>
-          <span className="bg-red-300 text-xl text-white inline-block rounded-full mt-12 px-8 py-2">
-            <strong>01:51</strong>
-          </span>
-        </div>
-        <div
-
-        >
-
-        </div>
+  return (
+    <>
+    <div className="services_list  w-full">
+     
+      <div className="title w-full flex justify-center text-2xl font-bold">
+        <h1>Users </h1>
       </div>
 
-    </div>
 
+      <div className="text-gray-900 bg-gray-200">
+        <div className="p-4 flex">
+          <h1 className="text-3xl">Lists</h1>
+        </div>
+        
+        <div className="px-3 py-4 flex justify-center">
+          <table className="w-full text-md bg-white shadow-md rounded mb-4">
+            <tbody>
+              <tr className="border-b">
+                <th className="text-left p-3 px-5">Name</th>
+                <th className="text-left p-3 px-5">Email</th>
+                <th className="text-left p-3 px-5">Phone</th>
+                <th />
+              </tr>
+              <tr className="border-b hover:bg-orange-100 bg-gray-100">
+                <td className="p-3 px-5">
+
+                </td>
+                <td className="p-3 px-5">
+
+                </td>
+                <td className="p-3 px-5">
+
+                </td>
+                
+                <td className="p-3 px-5 flex justify-end">
+                  <button
+                    type="button"
+                    className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(data._id)}
+                    className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </>
   )
 }

@@ -18,6 +18,7 @@ import Specialist from './pages/Dashboard/Specialist';
 import AddSpecialist from './pages/Dashboard/AddSpecialist';
 import Services from './pages/Dashboard/Services';
 import AddServices from './pages/Dashboard/AddServices';
+import DoctorsInfo from './components/DoctorsInfo/Index';
 
 
 
@@ -36,6 +37,7 @@ function App() {
            <Route path="/service" element={<Service/>} />
            <Route path="/appointment/:id?" element={<Appointment/>} />
            <Route path="/doctors" element={<Doctors/>} />
+           <Route path="/doctors/:id" element={<DoctorsInfo/>} />
          
         </Route>
         <Route path="/auth" element={<Auth/>} />

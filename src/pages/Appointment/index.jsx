@@ -2,13 +2,28 @@ import { useParams } from "react-router-dom"
 import Header from "../../components/Header"
 import { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../../context"
+import { useForm } from "react-hook-form";
+
 export default function index() {
-    const { id } = useParams()
-    const [currentDoctors, setcurrentDoctors] = useState([])
-    const { doctors } = useContext(GlobalContext)
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
 
+      const { id } = useParams()
+      const [specialist, setSpecialists] = useState([])
+      const [spacilist ,setSpacilist] = useState([]);
+      const { doctors } = useContext(GlobalContext)
+      const handleDoctor = (id) =>{
+        
+        const doctor = doctors.find((data) => data._id === id)
+        setSpacilist(doctor.specialist)
+      }
 
-
+      useEffect(()=>{},[spacilist])
+    
+        
     return (
         <>
 
@@ -49,12 +64,40 @@ export default function index() {
                         </label>
                         <select
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="doctor_name" name="doctor_name">
-                            <option value="">Select a service</option>
+                            id="doctor"
+                            {
+                                ...register('doctor')
+                            }
+                            onChange={(e) =>handleDoctor(e.target.value)}
+                            name="doctor">
+                            <option value="">Select a doctor</option>
                             {
                                 doctors.map((data , index)=>(
                                     <option key={index} value={data._id}>{data.name}</option>
                                    
+                                ))
+                            }
+                       
+                        </select>
+                    </div>
+
+                    <div className="mb-4">
+                        <label className="block text-gray-700 font-bold mb-2" htmlFor="specialist">
+                            Specialist
+                        </label>
+                        <select
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="specialist"
+                            {
+                                ...register('specialist')
+                            }
+                            
+                            name="specialist">
+                            <option value="">Select a specialist</option>
+                            {     
+                                spacilist.map((data , index)=>(
+                                
+                                    <option key={index} value={data._id}>{data.category}</option>
                                 ))
                             }
                        
@@ -76,7 +119,7 @@ export default function index() {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="time" type="time" placeholder="Select a time" />
                     </div>
-                    <div className="mb-4">
+                    {/* <div className="mb-4">
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="service">
                             Service
                         </label>
@@ -89,7 +132,7 @@ export default function index() {
                             <option value="styling">Styling</option>
                             <option value="facial">Facial</option>
                         </select>
-                    </div>
+                    </div> */}
                     <div className="mb-4">
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="message">
                             Message

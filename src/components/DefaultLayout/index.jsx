@@ -75,8 +75,17 @@ const DafaultLayout = () => {
 
                             </Link>
                         </div>
-
-
+                <div className="flex flex-row pt-24 px-10 pb-4">
+                    <div className="w-2/12 mr-6">
+                        <div className="bg-white rounded-xl shadow-lg mb-6 px-10 py-2">
+                            <Link
+                                to="/dashboard"
+                                className="inline-block text-gray-600 hover:text-black my-4 w-full">
+                                LogOut
+                            </Link>
+                        </div>
+                    </div>
+                </div>
                     </div>
                     
                 <Outlet />

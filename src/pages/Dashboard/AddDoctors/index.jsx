@@ -65,7 +65,7 @@ const AddDoctors = () => {
       }
 
     } catch (error) {
-      console.log(error)
+      
     }
 
   }

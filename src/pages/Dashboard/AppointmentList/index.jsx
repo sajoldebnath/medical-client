@@ -45,24 +45,24 @@ const AppointmentList = () =>{
               </p>
             </td>
             <td className="p-3 px-5">
-            name
+            
             </td>
             <td className="p-3 px-5">
-            name
+            
             </td>
             <td className="p-3 px-5">
-            name
+            
             </td>
             <td className="p-3 px-5">
-            name
+            
             </td>
             <td className="p-3 px-5">
-            name
+            
             </td><td className="p-3 px-5">
-            name
+            
             </td>
             <td className="p-3 px-5">
-            name
+            
             </td>
             <td className="p-3 px-5 flex justify-end">
               <button

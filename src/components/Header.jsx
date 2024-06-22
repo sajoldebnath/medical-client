@@ -1,8 +1,19 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const Header = () => {
     const {user ,setUser} = useContext(GlobalContext)
+    const  navigator =  useNavigate();
+    const handleLogout  = async() =>{
+       
+        try{
+            const res =  await axios.get('/users/logout');
+             setUser((perv) => ({...perv ,isLoggedin:false}))
+        }catch(error){
+            console.log(error)
+        }
+    }
     
     return (
         <div>
@@ -80,20 +91,24 @@ const Header = () => {
                         
                         </div>
                         <div className="hidden lg:flex lg:items-center lg:space-x-10">
-                            <a
+                            {
+                                user.isLoggedin ?
+                                <button
                                 className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
-                                href="#"
-                                title=""
+                                onClick={()=> handleLogout()}
                             >
-                                {' '}Sign up{' '}
-                            </a>
-                            <a
-                                className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
-                                href="#"
-                                title=""
-                            >
-                                {' '}Sign in{' '}
-                            </a>
+                                Logout
+                            </button>:
+                             <button
+                             className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                             onClick={() =>navigator('/auth')}
+                         >
+                             Sign up
+                         </button>
+
+                            }
+                           
+                        
                         </div>
                     </nav>
                     <nav className="flex flex-col py-4 space-y-2 lg:hidden">

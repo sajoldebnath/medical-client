@@ -24,7 +24,7 @@ export default function Doctors() {
                 <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 p-2 xl:p-5">
                     {
                         doctors.map((doctor, index) => (
-                            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 max-w-sm">
+                            <div key={index} onClick={()=>{navigate(`/doctors/${doctor._id}`)}}  className="bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 max-w-sm cursor-pointer">
                                 <div className="relative">
 
                                     <img
@@ -36,7 +36,10 @@ export default function Doctors() {
                                 </div>
                                 <div className="p-4">
                                     <div className=" flex justify-between">
-                                        <h3 className="text-lg font-medium mb-2">{doctor.name}</h3>
+                                        <h3 
+                                    
+                                        className="text-lg font-medium mb-2"
+                                        >{doctor.name}</h3>
                                         <div className="flex justify-center">
 
                                             <svg

@@ -12,11 +12,12 @@ const GlobalState = ({children}) =>{
    });
    const [specialists , setSpecialists] = useState([]);
    const [doctors , setDoctors] = useState([]);
+   const [services , setServices] = useState([]);
    const getProfile = async()=>{
     try{
         const res = await axios.get('/users/profile');
         if(res.data.success){
-            setUser((perv)=>({...res.data?.data , isLoggedin:true}));
+            setUser((perv)=>({...res.data.data, isLoggedin:true}));
         }
 
     }catch(error){
@@ -50,13 +51,31 @@ const GlobalState = ({children}) =>{
     }
 
    }
+   const getService = async() =>{
+    try{
+        const res = await axios.get('/services');
+  
+        if(res.data.success){
+            setServices(res.data.data)
+        }
+
+    }catch(error)
+    {
+        console.log(error)
+    }
+
+   }
 
    useEffect(()=>{
-      getSp()
       getProfile();
-      getDoctor();
 
    },[user.isLoggedin])
+ useEffect(()=>{
+    getSp()
+    getDoctor();
+    getService()
+
+ },[])
 
    return (
     <GlobalContext.Provider value={{
@@ -65,7 +84,9 @@ const GlobalState = ({children}) =>{
         specialists,
         setSpecialists,
         doctors,
-        setDoctors
+        setDoctors,
+        services,
+        setServices
     }}>
         {children}
     </GlobalContext.Provider>

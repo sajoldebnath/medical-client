@@ -5,11 +5,12 @@ import Service from '../Service';
 import Doctors from '../Doctors';
 import Gallary from '../../components/Gallary';
 
+
 const Home = () =>{
     return (
         <div>
             <Hero/>
-            <Gallary/>
+            <Gallary/> 
             <Service/>
             <Doctors/>
             <About/>
