@@ -2,8 +2,6 @@ import { Link, Outlet } from "react-router-dom";
 const DafaultLayout = () => {
     return (
         <div>
-            
-
             <div className="bg-orange-100 min-h-screen">
                 <div className="fixed bg-white text-blue-800 px-10 py-1 z-10 w-full">
                     <div className="flex items-center justify-between py-2 text-5x1">
@@ -75,7 +73,7 @@ const DafaultLayout = () => {
 
                             </Link>
                         </div>
-                <div className="flex flex-row pt-24 px-10 pb-4">
+                {/* <div className="flex flex-row pt-24 px-10 pb-4">
                     <div className="w-2/12 mr-6">
                         <div className="bg-white rounded-xl shadow-lg mb-6 px-10 py-2">
                             <Link
@@ -85,7 +83,7 @@ const DafaultLayout = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
+                </div> */}
                     </div>
                     
                 <Outlet />

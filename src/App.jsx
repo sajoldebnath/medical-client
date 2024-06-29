@@ -19,9 +19,10 @@ import AddSpecialist from './pages/Dashboard/AddSpecialist';
 import Services from './pages/Dashboard/Services';
 import AddServices from './pages/Dashboard/AddServices';
 import DoctorsInfo from './components/DoctorsInfo/Index';
+import Modal from 'react-modal'
 
 
-
+Modal.setAppElement('#root');
 
 function App() {
   axios.defaults.baseURL = 'http://localhost:8000/api/v1';

@@ -20,8 +20,8 @@ const Header = () => {
             <header className="bg-white lg:py-8">
                 <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <nav className="relative flex items-center justify-between h-16 bg-white lg:rounded-md lg:shadow-lg lg:h-24 lg:px-8 lg:py-6">
-                        <div className="flex-shrink-0">
-                            <a
+                        <div className="uppercase text-gray-800 dark:text-Black font-black text-3xl">
+                            {/* <a
                                 className="flex"
                                 href="#"
                                 title=""
@@ -30,8 +30,12 @@ const Header = () => {
                                     alt=""
                                     className="w-auto h-8 lg:h-10"
                                     src="https://cdn.rareblocks.xyz/collection/celebration/images/logo.svg"
+                                    
+                                    
                                 />
-                            </a>
+                            </a> */}
+                            Sondhani
+
                         </div>
                         <button
                             className="inline-flex p-2 ml-5 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"

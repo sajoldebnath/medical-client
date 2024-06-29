@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../../context";
 import axios from "axios";
 
+// now
+
 const AddServices = () => {
   const {
     register,
@@ -19,20 +21,16 @@ const AddServices = () => {
     form.append('email', data.email)
     form.append('phone', data.phone);
     form.append('price', data.price);
+    form.append('message', data.message);
     form.append('image', data.image[0]);
-    const res = await axios.post('/services',form)
-    if(res.data.success){
-      setServices(res.data.data);
-      alert(res.data.message)
-    }
+  
     try {
       const res = await axios.post('/services', form)
       if (res.data.success) {
-        const d = res.data.data;
-        console.log(d)
-        setDoctors((prev) => ([d, ...prev]))
+        setServices([ res.data.data,...services,])
         navigator('/dashboard/services')
         alert(res.data.message)
+      
       }
 
     } catch (error) {

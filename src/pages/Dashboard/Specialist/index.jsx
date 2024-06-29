@@ -1,8 +1,23 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { GlobalContext } from "../../../context"
+import axios from "axios"
+
 const Specialist = () => {
-  const { specialists } = useContext(GlobalContext)
+  const { specialists,setSpecialists } = useContext(GlobalContext)
+  const handleDelete = async(id) =>{
+    try{
+     const res = await axios.delete(`/specialists/${id}`);
+     if(res.data.success){
+      console.log('aaa');
+      setSpecialists(specialists.filter(specialist => specialist._id !== id));
+      // setSpecialists(specialists.filter((specialist) => specialists._id !== id));
+       // alert("Doctor deleted successfully");
+     }
+    }catch(error){
+     console.log(error)
+    }
+}
 
   return (
     <>
@@ -24,6 +39,8 @@ const Specialist = () => {
                 <tr className="border-b">
 
                   <th className="text-left p-3 px-5">Specialize on</th>
+                  <th className="float-end p-3 px-6">Action</th>
+                  
                   <th />
                 </tr>
                 {
@@ -33,14 +50,15 @@ const Specialist = () => {
                         {data.category}
                       </td>
                       <td className="p-3 px-5 flex justify-end">
-                        <button
+                        {/* <button
                           type="button"
                           className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                         >
                           Edit
-                        </button>
+                        </button> */}
                         <button
                           type="button"
+                          onClick={() => handleDelete(data._id)}
                           className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                         >
                           Delete

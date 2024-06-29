@@ -4,15 +4,17 @@ import About from '../../pages/About'
 import Service from '../Service';
 import Doctors from '../Doctors';
 import Gallary from '../../components/Gallary';
+import Appointment from '../../pages/Appointment'
+
 
 
 const Home = () =>{
     return (
         <div>
             <Hero/>
-            <Gallary/> 
             <Service/>
             <Doctors/>
+            {/* <Appointment/> */}
             <About/>
         </div>
     )

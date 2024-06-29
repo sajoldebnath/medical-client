@@ -45,7 +45,7 @@ const DoctorList = () => {
                   <th className="text-left p-3 px-5">specialist</th>
                   <th className="text-left p-3 px-5">rating</th>
                   <th className="text-left p-3 px-5">image</th>
-                  <th className=" float-end p-3 px-10">Action</th>
+                  <th className="float-end p-3 px-6">Action</th>
                 </tr>
                 {
                   doctors.map((data, index) => (
@@ -70,12 +70,12 @@ const DoctorList = () => {
                       </td>
 
                       <td className="p-3 px-5 flex justify-end">
-                        <button
+                        {/* <button
                           type="button"
                           className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                         >
                           Edit
-                        </button>
+                        </button> */}
                         <button
                           type="button"
                           onClick={()=> handleDelete(data._id)}

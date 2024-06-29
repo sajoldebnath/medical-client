@@ -78,10 +78,11 @@ export default function DoctorsInfo() {
                                     <span className="font-bold text-gray-700 dark:text-gray-300">
                                         Availabil Time:
                                     </span>
-                                    <span className="text-gray-600 dark:text-gray-300">{ new Date(Date(doctor?.doctorinfo?.starting)).getHours()}:{ new Date(Date(doctor?.doctorinfo?.starting)).getMinutes()}</span>
+                                    
+                                    <span className="text-gray-600 dark:text-gray-300">{ new Date(doctor?.doctorinfo?.starting).getHours()}:{ new Date(doctor?.doctorinfo?.starting).getMinutes()}</span>
                                     <span className="text-gray-600 dark:text-gray-300"> -</span>
                                     
-                                    <span className="text-gray-600 dark:text-gray-300">{ new Date(Date(doctor?.doctorinfo?.ending)).getHours()}:{ new Date(Date(doctor?.doctorinfo?.ending)).getMinutes()}</span>
+                                    <span className="text-gray-600 dark:text-gray-300">{ new Date(doctor?.doctorinfo?.ending).getHours()}:{ new Date(doctor?.doctorinfo?.ending).getMinutes()}</span>
 
                                 </div>
                             </div>
